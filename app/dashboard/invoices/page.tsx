@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Page(props: {
-  searchParmas?: Promise<{
+  searchParams?: Promise<{
     query: string;
     page: string;
   }>;
 }) {
-  const searchParams = await props.searchParmas;
+  const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages("query");
